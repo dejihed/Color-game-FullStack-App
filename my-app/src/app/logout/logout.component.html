@@ -1,0 +1,15 @@
+<div style="display: flex; margin-left: 330px; margin-top: 10px;">
+    <input 
+        type="text" 
+        id="dis" 
+        value="Voulez-vous vraiment vous déconnecter ?" 
+        style="border-radius: 5px; border: 1px solid #ccc; padding: 5px; " 
+        readonly
+        size="36%"
+    >
+
+    <button 
+        (click)="authServ.logout()" class="btn" style="background-color: blue; color: aliceblue; margin-left: 10px; height: 38px; padding: 0 15px; border-radius: 5px; border: none;">
+        Oui
+    </button>
+</div> 

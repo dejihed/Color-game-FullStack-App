@@ -1,0 +1,23 @@
+<div *ngIf="gameHistory.length">
+    <h3>Your Game History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Last Played</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let history of gameHistory">
+          <td>{{ history.lastPlayed | date: 'short' }}</td>
+          <td>{{ history.result }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!gameHistory.length">
+    <p>No game history available.</p>
+  </div>
+  
+  
+  

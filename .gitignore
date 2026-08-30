@@ -1,0 +1,40 @@
+# =========================
+# Angular
+# =========================
+my-app/node_modules/
+my-app/dist/
+my-app/.angular/
+
+# =========================
+# Spring Boot / Gradle
+# =========================
+stage backend/color-game/.gradle/
+stage backend/color-game/build/
+stage backend/color-game/bin/
+
+# =========================
+# Local JDK
+# =========================
+stage backend/color-game/OpenJDK-23/
+
+# =========================
+# IDE
+# =========================
+.idea/
+*.iml
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Archives
+# =========================
+*.zip
+
+# =========================
+# Logs
+# =========================
+*.log

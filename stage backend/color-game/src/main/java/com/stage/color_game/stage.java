@@ -1,0 +1,13 @@
+package com.stage.color_game;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class stage {
+
+    public static void main(String[] args) {
+        SpringApplication.run(stage.class, args);
+        System.out.println("first project works");
+    }
+}

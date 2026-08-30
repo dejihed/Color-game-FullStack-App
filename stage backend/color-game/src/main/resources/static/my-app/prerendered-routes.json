@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/color-game",
+    "/login",
+    "/logout",
+    "/sign-up"
+  ]
+}

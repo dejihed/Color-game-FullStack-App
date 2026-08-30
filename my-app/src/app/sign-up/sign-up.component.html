@@ -1,0 +1,51 @@
+<div class="signup-container">
+  <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+    <h2>Sign Up</h2>
+
+    <label for="username">Username</label>
+    <input 
+      type="text" 
+      id="username" 
+      name="username" 
+      [(ngModel)]="user.username" 
+      #username="ngModel"
+      required 
+      minlength="3"
+    />
+    <div *ngIf="username.invalid && username.touched" class="error-message">
+      Username must be at least 3 characters.
+    </div>
+
+    <label for="email">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      [(ngModel)]="user.email" 
+      #email="ngModel"
+      required
+      pattern="^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    />
+    <div *ngIf="email.invalid && email.touched" class="error-message">
+      Email must have at least 3 characters before '&#64;'.
+    </div>
+
+    <label for="password">Password</label>
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      [(ngModel)]="user.password" 
+      #password="ngModel"
+      required 
+      minlength="6"
+    />
+    <div *ngIf="password.invalid && password.touched" class="error-message">
+      Password must be at least 6 characters long.
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+
+    <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
+  </form>
+</div>

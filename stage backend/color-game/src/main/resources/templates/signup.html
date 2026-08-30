@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div class="signup-container">
+    <form class="signup-form" action="/login" method="POST">
+      <h2>Sign Up</h2>
+      
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+      
+      <label for="role">Role</label>
+      <select id="role" name="role" required>
+        <option value="" disabled selected>select your role</option>
+        <option value="admin">admin</option>
+        <option value="editor">user</option>
+      </select>
+      
+      <button type="submit" class="si" >Sign Up</button>
+      <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
+    </form>
+  </div>
+</body>
+</html>

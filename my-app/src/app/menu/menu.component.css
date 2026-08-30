@@ -1,0 +1,81 @@
+.navbar {
+    background: linear-gradient(90deg, #8E44AD, #E74C3C, #3498DB);
+    padding: 8px 15px; /* Réduit la hauteur de la barre */
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Réduit l'épaisseur de la bordure */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Réduit l'intensité de l'ombre */
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.5rem; /* Réduit la taille du texte de la marque */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+.navbar-toggler {
+    padding: 5px; /* Réduit l'épaisseur du bouton toggler */
+    border: none;
+    outline: none;
+}
+
+/* Boutons personnalisés */
+.btn-custom {
+    color: white;
+    font-size: 0.9rem; /* Réduit légèrement la taille du texte des boutons */
+    font-weight: 500;
+    padding: 8px 15px; /* Réduit le padding des boutons */
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logout-btn {
+    background: #E74C3C;
+    border: none;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* Texte utilisateur */
+.nav-user {
+    color: antiquewhite;
+    font-size: 1rem; /* Réduit la taille du texte utilisateur */
+    margin-right: 10px; /* Réduit l'espacement */
+}
+
+/* Séparateur */
+.separator {
+    color: white;
+    font-weight: bold;
+}
+
+/* Animation du dégradé */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

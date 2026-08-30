@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/login">Color Game</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="ms-auto">
+        <ng-container *ngIf="!authServ.connected">
+          <div class="d-flex align-items-center">
+            <a class="nav-link btn-custom" href="/contact">contact &nbsp;</a>
+            <a class="nav-link btn-custom" href="/login">Login</a>
+            <span class="separator">&nbsp;</span>
+            <a class="nav-link btn-custom" href="/sign-up">Sign-up</a>
+            
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="authServ.connected">
+          <div class="d-flex align-items-center">
+            <span class="nav-user">{{ authServ.getCurrentUser()?.username }}</span>
+            
+            <span class="separator">&nbsp;</span>
+            <a *ngIf="authServ.getCurrentUser()?.role === 'admin'" 
+               class="nav-link btn-custom" [routerLink]="'/users'">Users</a>
+               <a *ngIf="authServ.getCurrentUser()?.role === 'admin'" 
+               class="nav-link btn-custom" [routerLink]="'/users-history'">All History</a>
+               <a class="nav-link btn-custom" [routerLink]="'/history'">History</a>
+               <a *ngIf="authServ.getCurrentUser()?.role === 'admin'" 
+               class="nav-link btn-custom" [routerLink]="'/add-user'">add-user</a>
+            <span class="separator">&nbsp;|&nbsp;</span>
+            <a class="nav-link btn-custom logout-btn" (click)="logout()">Logout</a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</nav>

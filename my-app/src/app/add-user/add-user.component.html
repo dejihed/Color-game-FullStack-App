@@ -1,0 +1,80 @@
+<h3 class="form-title">Add User</h3>
+<form (ngSubmit)="addUser()" class="user-form" #userForm="ngForm" novalidate>
+  <!-- Username Field -->
+  <div class="input-group">
+    <label for="username">Username</label>
+    <input 
+      [(ngModel)]="newUser.username" 
+      class="input-field" 
+      id="username" 
+      name="username" 
+      required 
+      minlength="3" 
+      #username="ngModel"
+      placeholder="Enter username" />
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error-message">
+      <p *ngIf="username.errors?.['required']">Username is required.</p>
+      <p *ngIf="username.errors?.['minlength']">Username must be at least 3 characters long.</p>
+    </div>
+  </div>
+
+  <!-- Email Field -->
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input 
+      [(ngModel)]="newUser.email" 
+      class="input-field" 
+      id="email" 
+      name="email" 
+      required 
+      pattern="^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+      #email="ngModel"
+      placeholder="Enter email" />
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+      <p *ngIf="email.errors?.['required']">Email is required.</p>
+      <p *ngIf="email.errors?.['pattern']">Email must have at least 3 characters before &#64;.</p>
+      <p *ngIf="email.errors?.['email']">Enter a valid email address.</p>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input 
+      [(ngModel)]="newUser.password" 
+      class="input-field" 
+      id="password" 
+      name="password" 
+      required 
+      minlength="6" 
+      pattern="^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}$" 
+      type="password" 
+      #password="ngModel"
+      placeholder="Enter password" />
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+      <p *ngIf="password.errors?.['required']">Password is required.</p>
+      <p *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</p>
+      <p *ngIf="password.errors?.['pattern']">Password must contain both letters and numbers.</p>
+    </div>
+  </div>
+
+  <!-- Role Field -->
+  <div class="input-group">
+    <label for="role">Role</label>
+    <select 
+      [(ngModel)]="newUser.role" 
+      class="input-field select-field" 
+      id="role" 
+      name="role" 
+      required 
+      #role="ngModel">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+    <div *ngIf="role.invalid && (role.dirty || role.touched)" class="error-message">
+      <p *ngIf="role.errors?.['required']">Role is required.</p>
+    </div>
+  </div>
+
+  <button type="submit" class="button add-button" [disabled]="!userForm.valid">Add</button>
+</form>
